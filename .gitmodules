@@ -1,0 +1,4 @@
+[submodule "deps/raylib"]
+	path = deps/raylib
+	url = https://github.com/sonro/raylib.git
+	branch = sonro/zig-0.16

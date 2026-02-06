@@ -4,8 +4,7 @@
     .fingerprint = 0xc4cfa8c610114f28,
     .dependencies = .{
         .raylib = .{
-            .url = "git+https://github.com/raysan5/raylib#9f831428e6be0eba8762a154e3e9139d4f071970",
-            .hash = "raylib-5.6.0-dev-whq8uL592gQ782dF95oci4S61qrNVYK3MhpUpNwFgZ1J",
+            .path = "deps/raylib",
         },
         .raygui = .{
             .url = "git+https://github.com/raysan5/raygui#9cdfec460b43a17264af3c181c46f62bf107ac17",
