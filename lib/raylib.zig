@@ -3093,6 +3093,11 @@ pub fn setTraceLogLevel(logLevel: TraceLogLevel) void {
     cdef.SetTraceLogLevel(logLevel);
 }
 
+/// Set the custom trace log callback
+pub fn setTraceLogCallback(callback: ?*const fn (c_int, [*c]const u8, ...) callconv(.c) void) void {
+    cdef.SetTraceLogCallback(callback);
+}
+
 /// Internal memory allocator
 pub fn memAlloc(size: u32) *anyopaque {
     return cdef.MemAlloc(@as(c_uint, size));
