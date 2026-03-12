@@ -11,7 +11,7 @@ pub const math = @import("raymath.zig");
 const C = std.builtin.CallingConvention.c;
 
 test {
-    std.testing.refAllDeclsRecursive(@This());
+    std.testing.refAllDecls(@This());
 }
 
 pub const RaylibError = error{
