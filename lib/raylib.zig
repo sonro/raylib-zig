@@ -3094,7 +3094,7 @@ pub fn setTraceLogLevel(logLevel: TraceLogLevel) void {
 }
 
 /// Set the custom trace log callback
-pub fn setTraceLogCallback(callback: ?*const fn (c_int, [*c]const u8, ...) callconv(.c) void) void {
+pub fn setTraceLogCallback(callback: ?*const fn (c_int, [*c]const u8, std.builtin.VaList) callconv(.c) void) void {
     cdef.SetTraceLogCallback(callback);
 }
 

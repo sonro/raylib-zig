@@ -1,5 +1,6 @@
 // raylib-zig (c) Nikolas Wipper 2023
 
+const std = @import("std");
 const rl = @import("raylib.zig");
 
 pub extern "c" fn InitWindow(width: c_int, height: c_int, title: [*c]const u8) void;
@@ -110,7 +111,7 @@ pub extern "c" fn SetConfigFlags(flags: rl.ConfigFlags) void;
 pub extern "c" fn OpenURL(url: [*c]const u8) void;
 pub extern "c" fn TraceLog(logLevel: rl.TraceLogLevel, text: [*c]const u8, ...) void;
 pub extern "c" fn SetTraceLogLevel(logLevel: rl.TraceLogLevel) void;
-pub extern "c" fn SetTraceLogCallback(callback: ?*const fn (c_int, [*c]const u8, ...) callconv(.c) void) void;
+pub extern "c" fn SetTraceLogCallback(callback: ?*const fn (c_int, [*c]const u8, std.builtin.VaList) callconv(.c) void) void;
 pub extern "c" fn MemAlloc(size: c_uint) *anyopaque;
 pub extern "c" fn MemRealloc(ptr: *anyopaque, size: c_uint) *anyopaque;
 pub extern "c" fn MemFree(ptr: *anyopaque) void;
