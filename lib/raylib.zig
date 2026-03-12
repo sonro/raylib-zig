@@ -1662,7 +1662,7 @@ pub const AutomationEventList = extern struct {
     }
 };
 
-pub const ConfigFlags = packed struct {
+pub const ConfigFlags = packed struct(c_uint) {
     __reserved: bool = false,
     fullscreen_mode: bool = false,
     window_resizable: bool = false,
@@ -1680,21 +1680,7 @@ pub const ConfigFlags = packed struct {
     window_mouse_passthrough: bool = false,
     borderless_windowed_mode: bool = false,
     interlaced_hint: bool = false,
-    __reserved2: bool = false,
-    __reserved3: bool = false,
-    __reserved4: bool = false,
-    __reserved5: bool = false,
-    __reserved6: bool = false,
-    __reserved7: bool = false,
-    __reserved8: bool = false,
-    __reserved9: bool = false,
-    __reserved10: bool = false,
-    __reserved11: bool = false,
-    __reserved12: bool = false,
-    __reserved13: bool = false,
-    __reserved14: bool = false,
-    __reserved15: bool = false,
-    __reserved16: bool = false,
+    _pad: u15 = 0,
 };
 
 pub const TraceLogLevel = enum(c_int) {
@@ -2010,7 +1996,7 @@ pub const BlendMode = enum(c_int) {
     custom_separate = 7,
 };
 
-pub const Gesture = packed struct {
+pub const Gesture = packed struct(c_uint) {
     tap: bool = false,
     doubletap: bool = false,
     hold: bool = false,
@@ -2021,12 +2007,7 @@ pub const Gesture = packed struct {
     swipe_down: bool = false,
     pinch_in: bool = false,
     pinch_out: bool = false,
-    __reserved1: bool = false,
-    __reserved2: bool = false,
-    __reserved3: bool = false,
-    __reserved4: bool = false,
-    __reserved5: bool = false,
-    __reserved6: bool = false,
+    _pad: u22 = 0,
 };
 
 pub const CameraMode = enum(c_int) {
